@@ -1,52 +1,77 @@
-# Very short description of the package
+# usmonaliyev/env-auth
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/usmonaliyev/env-auth.svg?style=flat-square)](https://packagist.org/packages/usmonaliyev/env-auth)
-[![Total Downloads](https://img.shields.io/packagist/dt/usmonaliyev/env-auth.svg?style=flat-square)](https://packagist.org/packages/usmonaliyev/env-auth)
-![GitHub Actions](https://github.com/usmonaliyev/env-auth/actions/workflows/main.yml/badge.svg)
+[![Latest Stable Version](http://poser.pugx.org/usmonaliyev/env-auth/v)](https://packagist.org/packages/usmonaliyev/env-auth)
+[![Total Downloads](http://poser.pugx.org/usmonaliyev/env-auth/downloads)](https://packagist.org/packages/usmonaliyev/env-auth)
+[![License](http://poser.pugx.org/usmonaliyev/env-auth/license)](https://packagist.org/packages/usmonaliyev/env-auth)
+[![PHP Version Require](http://poser.pugx.org/usmonaliyev/env-auth/require/php)](https://packagist.org/packages/usmonaliyev/env-auth)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+
+The package provides middleware for Laravel applications to handle Basic Authentication and Secret Key Authentication using credentials stored in the `.env` file.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require usmonaliyev/config
+composer require usmonaliyev/env-auth
+```
+
+## Configuration
+
+Add the necessary credentials to your `.env` file.
+
+For `BasicEnv` middleware:
+
+```dotenv
+BASIC_USERNAME=your-username
+BASIC_PASSWORD=your-password
+```
+
+For `SecretEnv` middleware:
+
+```dotenv
+AUTH_SECRET_KEY=your-secret-key
 ```
 
 ## Usage
 
+### Register middleware
+
+If you are using Laravel 11.x check out this link: https://laravel.com/docs/11.x/middleware#middleware-aliases
+
+In your Laravel application's `app/Http/Kernel.php` file, register the new middleware classes:
+
 ```php
-// Usage description here
+protected $routeMiddleware = [
+    // Other middleware
+    'basic.env' => \Usmonaliyev\EnvAuth\Middleware\BasicEnv::class,
+    'secret.env' => \Usmonaliyev\EnvAuth\Middleware\SecretEnv::class,
+];
 ```
 
-### Testing
+### Protect routes
+
+Apply the middleware to your routes in `routes/web.php` or `routes/api.php`.
+
+```php
+Route::middleware('basic.env')->group(function () {
+
+    ...
+});
+```
+
+## Testing
+
+Use the following cURL command to test Basic Authentication:
 
 ```bash
-composer test
+curl -u your-username:your-password http://your-app-url/basic-protected-route
 ```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email t.usmonaliyev99@gmail.com instead of using the issue tracker.
-
-## Credits
-
--   [usmonaliyev99](https://github.com/usmonaliyev)
--   [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
