@@ -14,26 +14,17 @@ class SecretEnv
      */
     public function handle(Request $request, \Closure $next)
     {
-        if ($this->validate($request)) {
+        $secret = $request->header('Secret');
+
+        if ($this->validate($secret)) {
             return $next($request);
         }
 
-        return Response::make(['message' => 'Invalid credentials'], 401, ['WWW-Authenticate' => 'Basic']);
+        return Response::make(['message' => 'Invalid credentials'], 401);
     }
 
-    protected function validate(Request $request): bool
+    protected function validate(?string $secret): bool
     {
-        return $this->validUser($request->getUser()) && $this->validPassword($request->getPassword());
-    }
-
-    protected function validUser(?string $username): bool
-    {
-        return $username !== null && $username === config('env-auth.basic.username');
-    }
-
-    protected function validPassword(?string $password): bool
-    {
-
-        return $password !== null && $password === config('env-auth.basic.password');
+        return $secret === config('env-auth.secret');
     }
 }
