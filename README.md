@@ -16,9 +16,19 @@ You can install the package via composer:
 composer require usmonaliyev/env-auth
 ```
 
+## Publish
+
+Publish the package configuration:
+
+```bash
+php artisan vendor:publish --provider="Usmonaliyev\EnvAuth\EnvAuthServiceProvider"
+```
+
 ## Configuration
 
 Add the necessary credentials to your `.env` file.
+
+If you want to modify keys of variables, you need to change `config/env-auth.php` after publish config file.
 
 For `BasicEnv` middleware:
 
