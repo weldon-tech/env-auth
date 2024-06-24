@@ -1,7 +1,6 @@
 {
     "name": "usmonaliyev/env-auth",
-    "version": "1.0.0",
-    "description": "...",
+    "description": "The package provides middleware for Laravel applications to handle Basic Authentication and Secret Key Authentication using credentials stored in the .env file.",
     "keywords": [
         "usmonaliyev",
         "config"
