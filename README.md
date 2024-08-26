@@ -1,9 +1,9 @@
 # usmonaliyev/env-auth
 
-[![Latest Stable Version](http://poser.pugx.org/usmonaliyev/env-auth/v)](https://packagist.org/packages/usmonaliyev/env-auth)
-[![Total Downloads](http://poser.pugx.org/usmonaliyev/env-auth/downloads)](https://packagist.org/packages/usmonaliyev/env-auth)
-[![License](http://poser.pugx.org/usmonaliyev/env-auth/license)](https://packagist.org/packages/usmonaliyev/env-auth)
-[![PHP Version Require](http://poser.pugx.org/usmonaliyev/env-auth/require/php)](https://packagist.org/packages/usmonaliyev/env-auth)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/usmonaliyev/env-auth/php)
+![Total Downloads](https://img.shields.io/packagist/dt/usmonaliyev/env-auth.svg)
+![Latest Version on Packagist](https://img.shields.io/packagist/v/usmonaliyev/env-auth.svg)
+![Packagist License](https://img.shields.io/packagist/l/usmonaliyev/env-auth)
 
 
 The package provides middleware for Laravel applications to handle Basic Authentication and Secret Key Authentication using credentials stored in the `.env` file.
