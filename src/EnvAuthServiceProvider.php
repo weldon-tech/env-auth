@@ -1,6 +1,6 @@
 <?php
 
-namespace Usmonaliyev\EnvAuth;
+namespace Weldon\EnvAuth;
 
 use Illuminate\Support\ServiceProvider;
 

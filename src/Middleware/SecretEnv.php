@@ -1,6 +1,6 @@
 <?php
 
-namespace Usmonaliyev\EnvAuth\Middleware;
+namespace Weldon\EnvAuth\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

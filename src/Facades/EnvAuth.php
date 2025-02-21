@@ -1,11 +1,11 @@
 <?php
 
-namespace Usmonaliyev\EnvAuth\Facades;
+namespace Weldon\EnvAuth\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Usmonaliyev\EnvAuth\Skeleton\SkeletonClass
+ * @see \Weldon\EnvAuth\Skeleton\SkeletonClass
  */
 class EnvAuth extends Facade
 {
@@ -16,6 +16,6 @@ class EnvAuth extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return \Usmonaliyev\EnvAuth\EnvAuth::class;
+        return \Weldon\EnvAuth\EnvAuth::class;
     }
 }

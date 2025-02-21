@@ -1,9 +1,9 @@
-# usmonaliyev/env-auth
+# weldon/env-auth
 
-![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/usmonaliyev/env-auth/php)
-![Total Downloads](https://img.shields.io/packagist/dt/usmonaliyev/env-auth.svg)
-![Latest Version on Packagist](https://img.shields.io/packagist/v/usmonaliyev/env-auth.svg)
-![Packagist License](https://img.shields.io/packagist/l/usmonaliyev/env-auth)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/weldon/env-auth/php)
+![Total Downloads](https://img.shields.io/packagist/dt/weldon/env-auth.svg)
+![Latest Version on Packagist](https://img.shields.io/packagist/v/weldon/env-auth.svg)
+![Packagist License](https://img.shields.io/packagist/l/weldon/env-auth)
 
 
 The package provides middleware for Laravel applications to handle Basic Authentication and Secret Key Authentication using credentials stored in the `.env` file.
@@ -13,7 +13,7 @@ The package provides middleware for Laravel applications to handle Basic Authent
 You can install the package via composer:
 
 ```bash
-composer require usmonaliyev/env-auth
+composer require weldon/env-auth
 ```
 
 ## Publish
@@ -21,7 +21,7 @@ composer require usmonaliyev/env-auth
 Publish the package configuration:
 
 ```bash
-php artisan vendor:publish --provider="Usmonaliyev\EnvAuth\EnvAuthServiceProvider"
+php artisan vendor:publish --provider="Weldon\EnvAuth\EnvAuthServiceProvider"
 ```
 
 ## Configuration
@@ -54,8 +54,8 @@ In your Laravel application's `app/Http/Kernel.php` file, register the new middl
 ```php
 protected $routeMiddleware = [
     // Other middleware
-    'basic.env' => \Usmonaliyev\EnvAuth\Middleware\BasicEnv::class,
-    'secret.env' => \Usmonaliyev\EnvAuth\Middleware\SecretEnv::class,
+    'basic.env' => \Weldon\EnvAuth\Middleware\BasicEnv::class,
+    'secret.env' => \Weldon\EnvAuth\Middleware\SecretEnv::class,
 ];
 ```
 

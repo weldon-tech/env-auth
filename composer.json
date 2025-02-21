@@ -1,17 +1,17 @@
 {
-    "name": "usmonaliyev/env-auth",
+    "name": "weldon/env-auth",
     "description": "The package provides middleware for Laravel applications to handle Basic Authentication and Secret Key Authentication using credentials stored in the .env file.",
     "keywords": [
-        "usmonaliyev",
+        "weldon",
         "config"
     ],
-    "homepage": "https://github.com/usmonaliyev/env-auth",
+    "homepage": "https://github.com/weldon-tech/env-auth",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "usmonaliyev99",
-            "email": "t.usmonaliyev99@gmail.com",
+            "name": "Weldon",
+            "email": "info.weldonuz@gmail.com",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Usmonaliyev\\EnvAuth\\": "src"
+            "Weldon\\EnvAuth\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Usmonaliyev\\EnvAuth\\Tests\\": "tests"
+            "Weldon\\EnvAuth\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Usmonaliyev\\EnvAuth\\EnvAuthServiceProvider"
+                "Weldon\\EnvAuth\\EnvAuthServiceProvider"
             ],
             "aliases": {
-                "EnvAuth": "Usmonaliyev\\EnvAuth\\Facades\\EnvAuth"
+                "EnvAuth": "Weldon\\EnvAuth\\Facades\\EnvAuth"
             }
         }
     }
